@@ -4,7 +4,7 @@ import './Users.css'
 
 const Users = () => {
     const users = useLoaderData();
-
+    // console.log(users)
     // state--> data
     // state --> loader
     // use effect
