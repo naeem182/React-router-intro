@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 const User = ({ user }) => {
 
-    const { id, name, email, phone } = user
+    const { id, name, email, phone } = user;
+    const navigate = useNavigate();
+    const handleToShowUser = () => {
+        navigate(`./${id}`)
+    }
 
     const userStyle = {
         border: '2px solid yellow',
@@ -15,9 +19,10 @@ const User = ({ user }) => {
             <h2>{name}</h2>
             <p>email:{email}</p>
             <p>phone:{phone}</p>
-            <p>phone:{id}</p>
+
 
             <Link to={`/user/${id}`}><button>Click Me</button></Link>
+            <button onClick={handleToShowUser}>show user details</button>
         </div>
     )
 }
